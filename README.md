@@ -1,6 +1,14 @@
 # MessageSource and Validation
 > #DTO #Controller #BindingResult #MessageSource #프로젝트생성 #SpringBoot 
 
+[01. 의존성 주입](01-의존성-주입)
+02. MessageSource 주입
+03. messages.properties 작성
+04. DTO 필드에 message 속성 부여
+05. Controller에서 파라미터 검증
+
+---
+
 ## 01. 의존성 주입 (`pom.xml`)
 
 > MessageSource와 Validation 기능을 사용하려면 다음 의존성들이 필요합니다.
@@ -35,7 +43,7 @@
 #### 권장 의존성
 
 **3. Lombok**
-- [[#a. 보일러플레이트 코드|보일러플레이트 코드]] 감소
+- [보일러플레이트 코드](#a-보일러플레이트-코드) 감소
 - DTO 클래스에서 `@Data` 로 Getter/Setter 자동 생성
 - 코드 가독성 및 작성 시간 단축
 
@@ -170,7 +178,7 @@ public class WebMvcConfig implements WebMvcConfigurer{
 
 - 요청 수신: `@Validated`가 붙은 DTO가 Controller에 도착
 - 검증 위임: **WebMvcConfig**에서 등록한 `WebMvcConfig.getValidator()`를 호출
-- 검증 수행: **[[#b. LocalValidatorFactoryBean|LocalValidatorFactoryBean]]**이 검증을 수행하고 오류 감지
+- 검증 수행: **[LocalValidatorFactoryBean](#b-LocalValidatorFactoryBean)**이 검증을 수행하고 오류 감지
 - 메시지 조회: 연결된 **MessageSource**를 통해 `{valid.id.notBlank}` 키를 조회
 - 결과 반환: 실제 에러 메시지가 **BindingResult**에 저장
 
@@ -333,7 +341,7 @@ public class LocaleCookieConfig implements WebMvcConfigurer {
 ![영어 파라미터가 붙을 때](./img/20251230_489(1724).png)
 ---
 
-## 04. DTO에서 필드에 message 속성 부여
+## 04. DTO 필드에 message 속성 부여
 
 - `@Size`는 빈문자열`""` 의 길이를 0 취급함.
 - Nullable한 값에는 `@Pattern`의 정규식 안에서 `{}` 로 검증하자.
@@ -370,7 +378,7 @@ public class UserCreateRequest {
 
 ---
 
-## 05. Controller에서 Validation으로 파라미터 검증
+## 05. Controller에서 파라미터 검증
 
 ```java
 import java.util.Map;
