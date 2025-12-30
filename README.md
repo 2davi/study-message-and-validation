@@ -1,11 +1,11 @@
 # MessageSource and Validation
 > #DTO #Controller #BindingResult #MessageSource #프로젝트생성 #SpringBoot 
 
-[01. 의존성 주입](#01-의존성-주입)
-[02. MessageSource 주입](#02-messagesource-주입)
-[03. messages.properties 작성](#03-messagesproperties-작성)
-[04. DTO 필드에 message 속성 부여](#04-dto-필드에-message-속성-부여)
-[05. Controller에서 파라미터 검증](#05-controller에서-파라미터-검증)
+- **[01. 의존성 주입](#01-의존성-주입)**
+- **[02. MessageSource 주입](#02-messagesource-주입)**
+- **[03. messages.properties 작성](#03-messagesproperties-작성)**
+- **[04. DTO 필드에 message 속성 부여](#04-dto-필드에-message-속성-부여)**
+- **[05. Controller에서 파라미터 검증](#05-controller에서-파라미터-검증)**
 
 ---
 
