@@ -440,7 +440,22 @@ public class UserRestController {
 
 ### a. 보일러플레이트 코드
 
-...
+
+> 19세기 신문 업계에서, 광고나 법적 고지와 같은 반복되는 내용을 금속판에 미리 찍어서 재사용했으며, 이 금속판이 증기 보일러 제작에 쓰이는 철판과 비슷하게 생겨 "boilerplate"라고 부르기 시작했다.
+
+Java와 같은 **verbose(장황한)** 언어에서는 작은 기능 구현을 위해 많은 양의 보일러플레이트 코드를 작성해야 한다.
+
+클래스의 private 속성에 접근하기 위한 접근자**accessor**와 이를 수정하기 위한 변경자**mutator**가 그 예시. Spring Framework 안에서는 DTO, Entity, VO 클래스를 만들 때 이런 코드를 반복해서 작성해야 한다.
+
+- 생산성 저하(Productivity Loss)
+	개발자가 기능 구현을 위해 작성하는 반복되는 코드로 정작 중요한 비즈니스 로직 구현에 집중하지 못함
+- 가독성 저하(Readability Loss)
+	실제로 중요한 로직이 수십 줄의 Getter/Setter 사이에 묻혀 코드 리뷰 시 핵심을 찾기 어려움
+- 유지보수 비용 증가(Maintenance Cost)
+	필드 하나 추가할 때마다 관련된 모든 보일러플레이트 코드를 수정해야 하는 번거로움
+
+**Lombok**은 Java annotation을 사용하는 메타프로그래밍 형태로 보일러플레이트 코드─필요하지만 귀찮은, 반복적이고 기계적인 코드─를 자동 생성해주는 라이브러리이다. Annotation을 붙이면 컴파일 타임**compile time**에 자동으로 해당 메서드들을 생성해 준다.
+
 
 ### b. LocalValidatorFactoryBean
 
